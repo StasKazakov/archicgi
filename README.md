@@ -32,32 +32,13 @@ If `SLACK_WEBHOOK_URL` is not set — the report will be printed to console inst
 
 ## Installation & Running
 
-### Option 1 — Pull from Docker Hub (easiest)
-```bash
-docker pull urgor/health-monitor:latest
-```
-
-Create a `.env` file with your Slack webhook, then run:
-```bash
-# Single check
-docker run --env-file .env -v ${PWD}/data:/app/data urgor/health-monitor:latest --check
-
-# Watch mode (every 60 seconds)
-docker run --env-file .env -v ${PWD}/data:/app/data urgor/health-monitor:latest --watch
-
-# Single check without Slack notification
-docker run --env-file .env -v ${PWD}/data:/app/data urgor/health-monitor:latest --check --quiet
-```
-
----
-
-### Option 2 — Clone and build with Docker
+### Option 1 — Clone and run with Docker
 ```bash
 git clone https://github.com/StasKazakov/archicgi.git
 cd archicgi
 ```
 
-Create a `.env` file, then:
+Create a `.env` file, then build:
 ```bash
 docker-compose build
 ```
@@ -76,7 +57,7 @@ docker-compose run health-monitor --check --quiet
 
 ---
 
-### Option 3 — Run with Python
+### Option 2 — Clone and run with Python
 
 Requirements: Python 3.10+
 ```bash
@@ -88,7 +69,7 @@ source venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
 
-Create a `.env` file, then:
+Create a `.env` file, then run:
 ```bash
 # Single check
 python main.py --check

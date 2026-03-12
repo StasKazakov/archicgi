@@ -1,0 +1,6 @@
+/venv
+.env
+/__pycache__
+/services/__pycache__
+/health_report.json
+/data

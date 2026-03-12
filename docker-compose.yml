@@ -1,0 +1,10 @@
+services:
+  health-monitor:
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=Europe/Kyiv
+

@@ -40,19 +40,19 @@ cd archicgi
 
 Create a `.env` file, then build:
 ```bash
-docker-compose build
+docker compose build
 ```
 
 Run:
 ```bash
 # Single check
-docker-compose run health-monitor --check
+docker compose run health-monitor --check
 
 # Watch mode (every 60 seconds)
-docker-compose run health-monitor --watch
+docker compose run health-monitor --watch
 
 # Single check without Slack notification
-docker-compose run health-monitor --check --quiet
+docker compose run health-monitor --check --quiet
 ```
 
 ---
